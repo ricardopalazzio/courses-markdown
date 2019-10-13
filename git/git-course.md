@@ -182,13 +182,54 @@ Não é complexo! É tão simples como matar um criança ou voar.
 Vamos alterar os arquivos nas pastas no tanus e do dinamite na mesma linha , fazer os merges novamente e ver o que acontece!
 
 ### Falando  um pouco sobre 
-- git revert
-- git reset 
-- git checkout
+- git revert (desfazer um commit , ele vai criar um commit na frente com o revert do anterior)
+- git checkout (desfazer mudancao, nosso ctrl+z)
+
+
+Primeiro vamos reverter um commit commun:  
+```git revert <hash>```  
+Quando falamos em reverter um merge , a coisa fica um pouquinho mais ordinária,
+pois o merge é originado de 2 parents, como vamos ver, nesse caso o revert precisa especificar
+qual dos parents serão revertidos utilizando o parametro -m  
+```git revert <hash> -m 1``` 
+
+Com o comando do checkout a gente pode navegar entre os comits.  
+```git checkout <hash>```
+
 
 e quando tudo cagar e quiser voltar pro estado que esta no servidor   
 ```git reset --hard origin/master```
 
+sempre que voltarmos pro checkout lembre que estamos em um commit, não em um branch!
+podemos criar uma branch apartir desse commit. vou mostrar no visualizer.
 
+###Visualizar diferenças entre commits
+Vamos listar os commits e utilizar:  
+```git diff hash1..hash2```
+
+### Tag, fechando nossa versão
+Um recurso  top  é podermos marcar nossos commits com uma TAG, 
+é uma etiqueta que fala algo sobre aquele commit em específico.
+Vamos simular nosso fechamento de versao.
+No repositorio do dinamite  vamo resetar para master e criar uma tag:  
+```git tag v1.0.0
+   git push --tags 
+   git tag --list | tee
+```
+
+### Por ultimo e nao menos importante o STASH!
+quando estamos no meio de uma tafera e  a carol ou o cleinton chega pedindo pra parar e fazer outra coisa,
+muitas vezes  nao estamos com tudo concluido e nao queremos commitar.
+nesse caso podemos usar o stash, um espaço temporario para nossa anterações.
+bora dar uma olhada como isso funciona
+```
+   git stash
+
+   git stash list
+   git stash apply 0
+   git stash drop
+   ou...
+   git stash pop 
+```
 
 **Manos, nunca, nunca usem push -f se nao tiverem certeza do que estao fazendo :) senao ficaremos todos sem emprego**
