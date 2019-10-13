@@ -126,13 +126,15 @@ Agora vamos executar o 'push', comando que vai enviar nossas alterações para o
 Galera, vamos criar 2 pastas agora para simular 2 usuario na pasta em curso-git, vou usar o tanus e o dinamite.
 entre nelas e execute: ```git clone  /home/tux/Documents/curso-git/servidor```
 
-Vamos na pasta tanus adiciona um ```<p> Se é gente boa cara </p>``` no arquivo idex.html , fazer o push para o servidor, entrar na pasta dinamite e executar ```git pull origin master``` 
+Vamos na pasta tanus adiciona um ```<p> Se é gente boa cara </p>``` no arquivo idex.html ,
+fazer o push para o servidor, entrar na pasta dinamite e executar ```git pull origin master``` 
 
 #### Vamos ver o gitk, a ferramenta visual do próprio git.
 No windows acho que vem com o instalador, linux, se nao tiverem sudo apt ou dnf install gitk 
 
 ### Branches
-Branches sao linhas de desenvolvimento  separadas, distintas, onde cada um pode seguir com seu fluxo de desenvolvimento se interferir no  trabalho dos outros amiguinhos.
+Branches sao linhas de desenvolvimento  separadas, distintas, onde cada um pode seguir com seu fluxo de desenvolvimento
+ sem interferir no  trabalho dos outros amiguinhos.
 Por exemplo, queremos trabalhar sem pegar o codigo que o Tanus esta fazendo pois sabemos que vai quebrar o front. kkk #ficaAdica
 
 Vamos para  a pasta do dinamite e vamos criar a  branch da tarefa 001  
@@ -172,3 +174,21 @@ simular o  que seria o rebase com ela.
 
 ### CONFLITOS!!!! !!!!!  
 ![](merge.gif)
+
+Confitlos acontecem o tempo todo no nosso dia a dia, é umas das coisas que precisamos intender 100% pois resolver um conflito de
+forma errada ...  voce vai ferrar com a vida de todos amiguinhos.
+Não é complexo! É tão simples como matar um criança ou voar.
+
+Vamos alterar os arquivos nas pastas no tanus e do dinamite na mesma linha , fazer os merges novamente e ver o que acontece!
+
+### Falando  um pouco sobre 
+- git revert
+- git reset 
+- git checkout
+
+e quando tudo cagar e quiser voltar pro estado que esta no servidor   
+```git reset --hard origin/master```
+
+
+
+**Manos, nunca, nunca usem push -f se nao tiverem certeza do que estao fazendo :) senao ficaremos todos sem emprego**
